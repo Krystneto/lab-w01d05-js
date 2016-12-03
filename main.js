@@ -12,14 +12,13 @@ var keyPress = function(event) {
   var textNode = document.createTextNode(val);
   listTodos.appendChild(li);
   li.appendChild(textNode);
-  event.target.value = '';
-  var qli = document.querySelector('li');
-  qli.classList.add("todo");
+  li.className = "todo";
   var liSpan = document.createElement('span')
-  liSpan.classList.add("remove");
-  document.querySelector('remove').textContent = 'X';
-
+  liSpan.classList.add('remove');
+  document.querySelector('remove');
   li.appendChild(liSpan);
+  liSpan.textContent = " X";
+  event.target.value = '';
   }
 };
 
@@ -28,3 +27,6 @@ var keyPress = function(event) {
 
 
 input.addEventListener('keydown',keyPress);
+
+// .addEventListener('click',removeX);
+// .addEventListener()
