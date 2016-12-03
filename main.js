@@ -24,15 +24,20 @@ var handleKeyPress = function(event) {
 
 var handleRemoveX = function(event) {
   console.log("event.target.value", event.target);
-  event.target.textContent = '';
+  var removeX = document.querySelector('.remove');
+  removeX.textContent = '';
 };
 
+var handleComplete = function(event) {
+  console.log('event.target', event.target);
+
+};
 
 input.addEventListener('keydown', handleKeyPress);
 
 listTodos.addEventListener('click', handleRemoveX);
 
-
+// listTodos.addEventListener('click', handleComplete);
 
 
 
