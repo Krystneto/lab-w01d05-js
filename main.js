@@ -4,7 +4,7 @@ var input = document.querySelector('input');
 var listTodos = document.querySelector('.todos');
 
 
-var keyPress = function(event) {
+var handleKeyPress = function(event) {
   if (event.keyCode === 13) {
   console.log('keyCode', event.keyCode);
   var val = event.target.value;
@@ -15,7 +15,6 @@ var keyPress = function(event) {
   li.className = "todo";
   var liSpan = document.createElement('span')
   liSpan.classList.add('remove');
-  document.querySelector('remove');
   li.appendChild(liSpan);
   liSpan.textContent = " X";
   event.target.value = '';
@@ -23,10 +22,22 @@ var keyPress = function(event) {
 };
 
 
+var handleRemoveX = function(event) {
+  console.log("event.target.value", event.target);
+  event.target.textContent = '';
+};
+
+
+input.addEventListener('keydown', handleKeyPress);
+
+listTodos.addEventListener('click', handleRemoveX);
 
 
 
-input.addEventListener('keydown',keyPress);
 
-// .addEventListener('click',removeX);
-// .addEventListener()
+
+
+
+
+
+
