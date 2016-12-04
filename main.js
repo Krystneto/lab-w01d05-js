@@ -28,16 +28,19 @@ var handleRemoveX = function(event) {
   removeX.textContent = '';
 };
 
-var handleComplete = function(event) {
+var handleCompleteOn = function(event) {
   console.log('event.target', event.target);
-
+  var liComplete = document.querySelector('li');
+  liComplete.classList.toggle("complete");
 };
+
+
 
 input.addEventListener('keydown', handleKeyPress);
 
 listTodos.addEventListener('click', handleRemoveX);
 
-// listTodos.addEventListener('click', handleComplete);
+listTodos.addEventListener('click', handleCompleteOn);
 
 
 
