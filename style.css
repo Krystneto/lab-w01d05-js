@@ -1,7 +1,22 @@
 body {
-  background: pink;
+  background-color: #f9f9eb;
+}
+
+
+h1 {
+  font-size: 42px;
+  font-family: Rockwell;
+  font-color: ;
+}
+
+.new-todos{
+  font-family: Arial;
 }
 
 .todo {
   list-style: none outside none;
+}
+
+.complete {
+  text-decoration: line-through;
 }

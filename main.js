@@ -23,14 +23,16 @@ var handleKeyPress = function(event) {
 
 
 var handleRemoveX = function(event) {
-  console.log("event.target.value", event.target);
-  var removeX = document.querySelector('.remove');
-  removeX.textContent = '';
+  console.log("event.target", event.target);
+  var x = document.querySelector('span');
+  x.textContent = '';
 };
+
+
 
 var handleCompleteOn = function(event) {
   console.log('event.target', event.target);
-  var liComplete = document.querySelector('li');
+  var liComplete = event.target;
   liComplete.classList.toggle("complete");
 };
 
