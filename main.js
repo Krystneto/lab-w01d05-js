@@ -36,10 +36,9 @@ var handleKeyPress = function(event) {
 
 // create function to remove the X from the list item
 var handleRemoveX = function(event) {
-console.log(this.parent);
-this.parent = ''
+console.log(this.parentNode);
+this.parentNode.remove(this.parentNode);
 };
-
 
 
 // create function to add class 'complete' to list item
