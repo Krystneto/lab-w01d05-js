@@ -29,6 +29,7 @@ var handleKeyPress = function(event) {
   liSpan.textContent = ' X';
   // clear the input value
   event.target.value = '';
+  // add event listeners
   li.addEventListener('click', handleCompleteOn);
   liSpan.addEventListener('click', handleRemoveX)
   }
