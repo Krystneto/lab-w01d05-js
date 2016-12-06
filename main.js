@@ -44,12 +44,12 @@ var handleKeyPress = function(event) {
 
 // create function to remove the X from the list item
 var handleRemoveX = function(event) {
-this.parentNode.remove(this.parentNode);
+  event.target.parentNode.remove();
 };
 
 // create function to add class 'complete' to list item
 var handleCompleteOn = function(event) {
-  this.classList.toggle("complete");
+  event.target.classList.toggle("complete");
 };
 
 // this starts the Counter when Enter is pressed
@@ -62,6 +62,7 @@ var handleStartCounter = function(event) {
 };
 
 // this updates the Counter when li is crossed
+// YES THIS IS NOT DRY I KNOW!!!!!!!
 var handleUpdateCounter = function(event) {
   var liLength = document.querySelectorAll('li').length;
   var completedList = document.querySelectorAll('.complete').length;

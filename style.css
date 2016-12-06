@@ -1,11 +1,12 @@
 body {
   background-color: #f9f9eb;
+  margin: 0 20px;
 }
 
 h1 {
   font-size: 42px;
   font-family: Rockwell;
-  font-color: ;
+  color: black;
 }
 
 .new-todos{
@@ -18,4 +19,9 @@ h1 {
 
 .complete {
   text-decoration: line-through;
+}
+
+span.remove:hover {
+  color: red;
+  font-size: 40px;
 }
