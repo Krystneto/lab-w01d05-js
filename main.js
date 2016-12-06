@@ -47,9 +47,24 @@ var handleCompleteOn = function(event) {
   this.classList.toggle("complete");
 };
 
-
 // create event listener for keydown and click
 input.addEventListener('keydown', handleKeyPress);
+
+var completedList = document.querySelectorAll('.complete').length;
+
+var numList = document.querySelectorAll('.todo').length;
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
