@@ -1,8 +1,14 @@
 console.log("Good morning, Sunshine!");
 
+// create variables for selectors
 var input = document.querySelector('input');
 var listTodos = document.querySelector('.todos');
-var listItems = document.querySelector('.todo');
+var completedList = document.querySelectorAll('.complete');
+var counter = document.querySelector('.counter');
+var listItems = document.querySelectorAll('.todo');
+
+
+
 // create a function to create a list item and add to list
 var handleKeyPress = function(event) {
   // listen for Enter key
@@ -31,32 +37,40 @@ var handleKeyPress = function(event) {
   event.target.value = '';
   // add event listeners
   li.addEventListener('click', handleCompleteOn);
-  liSpan.addEventListener('click', handleRemoveX)
+  liSpan.addEventListener('click', handleRemoveX);
+  li.addEventListener('click', handleUpdateCounter)
   }
 };
 
 // create function to remove the X from the list item
 var handleRemoveX = function(event) {
-console.log(this.parentNode);
 this.parentNode.remove(this.parentNode);
 };
-
 
 // create function to add class 'complete' to list item
 var handleCompleteOn = function(event) {
   this.classList.toggle("complete");
 };
 
-// create event listener for keydown and click
+// this starts the Counter when Enter is pressed
+var handleStartCounter = function(event) {
+  if (event.keyCode === 13) {
+  var liLength = document.querySelectorAll('li').length;
+  var completedList = document.querySelectorAll('.complete').length;
+  counter.textContent = completedList + "/" + liLength;
+  }
+};
+
+// this updates the Counter when li is crossed
+var handleUpdateCounter = function(event) {
+  var liLength = document.querySelectorAll('li').length;
+  var completedList = document.querySelectorAll('.complete').length;
+  counter.textContent = completedList + "/" + liLength;
+};
+
+// create event listener for handleKeyPress and handleStartCounter
 input.addEventListener('keydown', handleKeyPress);
-
-var completedList = document.querySelectorAll('.complete').length;
-
-var numList = document.querySelectorAll('.todo').length;
-
-
-
-
+input.addEventListener('keydown', handleStartCounter);
 
 
 
